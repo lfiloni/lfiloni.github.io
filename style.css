@@ -947,6 +947,9 @@ body {
   text-align: center;
   position: relative;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .hero-image {
@@ -2040,4 +2043,18 @@ body {
 .modal-content p,
 .modal-content span {
     font-size: 1.1em;  /* Testo secondario più grande */
+}
+
+#proverbi .section-header {
+  justify-content: center;
+  align-items: center;
+}
+
+#proverbi .section-title {
+  text-align: center;
+  width: 100%;
+}
+#proverbi .section-header {
+  justify-content: center;
+  align-items: center;
 }
