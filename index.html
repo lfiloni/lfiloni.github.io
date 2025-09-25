@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -55,7 +57,9 @@
                     </div>
                     <div class="hero-content">
                         <h2>Benvenuti a Giuliano di Lecce</h2>
-                        <p class="hero-description">Giuliano di Lecce, frazione di Castrignano del Capo, è un borgo medievale nel cuore del Salento che conserva intatto il fascino della sua storia millenaria.</p>
+                        <p class="hero-description">Giuliano di Lecce, frazione di Castrignano del Capo, è un borgo
+                            medievale nel cuore del Salento che conserva intatto il fascino della sua storia millenaria.
+                        </p>
                         <div class="hero-stats">
                             <div class="stat-item">
                                 <span class="stat-value">594 (2001)</span>
@@ -109,19 +113,28 @@
                 <div class="content-grid">
                     <div class="content-card">
                         <h3>Origini Antiche</h3>
-                        <p>L'insediamento umano nel territorio di Giuliano potrebbe aver avuto luogo in epoca anteriore alla conquista romana. Il nome deriva probabilmente da 'Ager Julianus' (podere di un Giulio). Il centro accolse i superstiti della vicina città messapica di Vereto, distrutta dalle incursioni saracene nel IX secolo.</p>
+                        <p>L'insediamento umano nel territorio di Giuliano potrebbe aver avuto luogo in epoca anteriore
+                            alla conquista romana. Il nome deriva probabilmente da 'Ager Julianus' (podere di un
+                            Giulio). Il centro accolse i superstiti della vicina città messapica di Vereto, distrutta
+                            dalle incursioni saracene nel IX secolo.</p>
                     </div>
                     <div class="content-card">
                         <h3>L'Universitas di Giuliano</h3>
-                        <p>Con i Normanni, il paese fu dotato di un reggimento comunale; nacque l'Universitas di Giuliano che, nell'ambito della Diocesi di Alessano, era una delle più importanti per popolazione (682 abitanti nel 1590) e cultura (notai, medici ed avvocati).</p>
+                        <p>Con i Normanni, il paese fu dotato di un reggimento comunale; nacque l'Universitas di
+                            Giuliano che, nell'ambito della Diocesi di Alessano, era una delle più importanti per
+                            popolazione (682 abitanti nel 1590) e cultura (notai, medici ed avvocati).</p>
                     </div>
                     <div class="content-card">
                         <h3>Epoca Rinascimentale</h3>
-                        <p>Nel XVII secolo, durante il dominio della famiglia feudataria dei Cicinelli, il centro fu dotato di ulteriori mura difensive sulle quali si apriva la porta di San Giuliano, tuttora esistente.</p>
+                        <p>Nel XVII secolo, durante il dominio della famiglia feudataria dei Cicinelli, il centro fu
+                            dotato di ulteriori mura difensive sulle quali si apriva la porta di San Giuliano, tuttora
+                            esistente.</p>
                     </div>
                     <div class="content-card">
                         <h3>Il Declino</h3>
-                        <p>Con l'abolizione del feudalesimo nel 1806 e l'affermarsi della politica napoleonica, l'Universitas giulianese venne chiusa e il 25 novembre 1808 il paese fu aggregato al comune di Castrignano del Capo.</p>
+                        <p>Con l'abolizione del feudalesimo nel 1806 e l'affermarsi della politica napoleonica,
+                            l'Universitas giulianese venne chiusa e il 25 novembre 1808 il paese fu aggregato al comune
+                            di Castrignano del Capo.</p>
                     </div>
                 </div>
             </div>
@@ -140,9 +153,10 @@
         <!-- Tradizioni Section -->
         <section id="tradizioni" class="section">
             <div class="container">
-                <h2 class="section-title">Tradizioni e Cultura</h2>
+                <h2 class="section-title">Tradizioni e Cultura</h2>  
                 <div class="traditions-header">
-                    <img src="img/tradizioniCultura/copertina.jpg" alt="Piazza di Castrignano del Capo" class="section-image">
+                    <img src="img/tradizioniCultura/copertina.jpg" alt="Piazza di Giuliano di Lecce"
+                        class="section-image">
                 </div>
                 <div class="traditions-grid" id="traditionsGrid">
                     <!-- Populated by JS -->
@@ -154,6 +168,10 @@
         <section id="eventi" class="section">
             <div class="container">
                 <h2 class="section-title">Eventi e Manifestazioni</h2>
+                <div class="events-header">
+                    <img src="img/eventi/copertina.jpg" alt="Piazza di Castrignano del Capo"
+                        class="section-image">
+                </div>
                 <div class="events-container" id="eventsContainer">
                     <!-- Populated by JS -->
                 </div>
@@ -162,13 +180,24 @@
 
         <!-- Vocabolario Section -->
         <section id="vocabolario" class="section">
+            <!-- Modal per i termini del vocabolario -->
+            <div id="termModal" class="modal">
+                <div class="modal-content">
+                  <button id="closeTermModal" class="close-btn">&times;</button>
+                  <h3 id="modalTerm"></h3>
+                  <p><strong>Traduzione:</strong> <span id="modalTranslation"></span></p>
+                  <p><strong>Esempio:</strong> <span id="modalExample"></span></p>
+                  <p><strong>Categoria:</strong> <span id="modalCategory"></span></p>
+                </div>
+              </div>
+
             <div class="container">
                 <h2 class="section-title">Vocabolario Giulianese</h2>
-                
+
                 <!-- Admin button -->
                 <div class="section-header">
                     <p>Esplora il ricco patrimonio linguistico del dialetto salentino parlato a Giuliano</p>
-                    <button class="btn btn--primary btn--sm" id="adminVocabularyBtn">Admin Vocabolario</button>
+                    <!--   <button class="btn btn--primary btn--sm" id="adminVocabularyBtn">Admin Vocabolario</button> -->
                 </div>
 
                 <!-- Alphabet navigation -->
@@ -202,12 +231,8 @@
                 <!-- Search bar -->
                 <div class="search-section">
                     <div class="search-box">
-                        <input 
-                            type="text" 
-                            class="form-control search-input" 
-                            placeholder="Cerca nel vocabolario..." 
-                            id="searchInput"
-                        >
+                        <input type="text" class="form-control search-input" placeholder="Cerca nel vocabolario..."
+                            id="searchInput">
                         <div class="search-icon">🔍</div>
                     </div>
                 </div>
@@ -240,7 +265,12 @@
                             </button>
                         </div>
                     </div>
-                    
+
+                    <div class="terms-loading" id="termsLoading" style="text-align:center; margin: 32px 0;">
+                        <span class="spinner"></span>
+                        <span>Caricamento in corso…</span>
+                    </div>
+
                     <div class="terms-container grid-view" id="termsContainer">
                         <!-- Populated by JS -->
                     </div>
@@ -258,13 +288,24 @@
 
         <!-- Proverbi Section -->
         <section id="proverbi" class="section">
+            <!-- Modal per i termini dei Proverbi -->
+            <div id="proverbModal" class="modal">
+                <div class="modal-content">
+                  <button id="closeProverbModal" class="close-btn">&times;</button>
+                  <h3 id="modalProverb"></h3>
+                  <p><strong>Traduzione:</strong> <span id="modalTranslationProv"></span></p>
+                  <p><strong>Significato:</strong> <span id="modalSignProv"></span></p>
+                  <p><strong>Categoria:</strong> <span id="modalCategoryProv"></span></p>
+                </div>
+              </div>
+
             <div class="container">
                 <div class="section-header">
                     <div>
                         <h2 class="section-title">Proverbi Salentini</h2>
                         <p>La saggezza popolare del Salento tramandata di generazione in generazione</p>
                     </div>
-                    <button class="btn btn--primary btn--sm" id="adminProverbsBtn">Gestisci Proverbi</button>
+                    <!-- <button class="btn btn--primary btn--sm" id="adminProverbsBtn">Gestisci Proverbi</button> -->
                 </div>
 
                 <!-- Proverb of the day -->
@@ -272,6 +313,10 @@
                     <div class="card daily-proverb-card">
                         <div class="card__body">
                             <h3>💫 Proverbio del Giorno</h3>
+                            <div class="proverb-loading" id="proverbsLoading" style="text-align:center; margin: 32px 0;">
+                                <span class="spinner"></span>
+                                <span>Caricamento in corso…</span>
+                            </div>
                             <div class="daily-proverb-content" id="dailyProverb">
                                 <!-- Populated by JS -->
                             </div>
@@ -321,252 +366,7 @@
         </section>
     </main>
 
-    <!-- Modals -->
-
-    <!-- Admin Login Modal -->
-    <div class="modal hidden" id="adminLoginModal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Accesso Amministratore Vocabolario</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="adminLoginForm">
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="adminPassword" required>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Accedi</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Proverbs Admin Login Modal -->
-    <div class="modal hidden" id="proverbsAdminModal">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3>Accesso Amministratore Proverbi</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="proverbsAdminForm">
-                    <div class="form-group">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="proverbsAdminPassword" required>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Accedi</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Admin Panel Modal -->
-    <div class="modal hidden" id="adminPanel">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content modal-content--large">
-            <div class="modal-header">
-                <h3>Pannello Amministratore Vocabolario</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="admin-tabs">
-                    <button class="admin-tab active" data-tab="add">Aggiungi Termine</button>
-                    <button class="admin-tab" data-tab="manage">Gestisci Termini</button>
-                    <button class="admin-tab" data-tab="import">Importa Dati</button>
-                    <button class="admin-tab" data-tab="export">Esporta Dati</button>
-                    <button class="admin-tab" data-tab="settings">Impostazioni</button>
-                </div>
-
-                <!-- Add term tab -->
-                <div class="admin-tab-content active" id="add-tab">
-                    <form id="addTermForm" class="add-term-form">
-                        <div class="form-group">
-                            <label class="form-label">Termine in dialetto</label>
-                            <input type="text" class="form-control" id="dialectTerm" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Traduzione italiana</label>
-                            <input type="text" class="form-control" id="translationTerm" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Pronuncia (opzionale)</label>
-                            <input type="text" class="form-control" id="pronunciationTerm">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Esempio d'uso</label>
-                            <textarea class="form-control" id="exampleTerm" rows="2"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Categoria</label>
-                            <select class="form-control" id="categoryTerm" required>
-                                <option value="">Seleziona categoria</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn--primary">Aggiungi Termine</button>
-                    </form>
-                </div>
-
-                <!-- Manage terms tab -->
-                <div class="admin-tab-content" id="manage-tab">
-                    <div class="manage-controls">
-                        <input type="text" class="form-control" placeholder="Cerca termine da modificare..." id="manageSearch">
-                    </div>
-                    <div class="terms-list" id="manageTermsList">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-
-                <!-- Import tab -->
-                <div class="admin-tab-content" id="import-tab">
-                    <div class="import-section">
-                        <h4>Importa Termini</h4>
-                        <p>Carica termini da file JSON o CSV</p>
-                        <div class="import-controls">
-                            <input type="file" id="importFile" accept=".json,.csv" class="form-control">
-                            <button class="btn btn--primary" id="importBtn">
-                                📤 Importa File
-                            </button>
-                        </div>
-                        <div class="import-format-help">
-                            <h5>Formati supportati:</h5>
-                            <p><strong>JSON:</strong> Array di oggetti con campi: dialect, translation, example, category</p>
-                            <p><strong>CSV:</strong> Colonne: dialect,translation,example,category</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Export tab -->
-                <div class="admin-tab-content" id="export-tab">
-                    <div class="export-section">
-                        <h4>Esporta Dati</h4>
-                        <p>Scarica tutti i termini per backup o trasferimento.</p>
-                        <div class="export-buttons">
-                            <button class="btn btn--primary" data-format="json">
-                                📥 Esporta JSON
-                            </button>
-                            <button class="btn btn--primary" data-format="csv">
-                                📊 Esporta CSV
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Settings tab -->
-                <div class="admin-tab-content" id="settings-tab">
-                    <div class="settings-section">
-                        <h4>Impostazioni</h4>
-                        <form id="changePasswordForm">
-                            <div class="form-group">
-                                <label class="form-label">Password Attuale</label>
-                                <input type="password" class="form-control" id="currentPassword" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Nuova Password</label>
-                                <input type="password" class="form-control" id="newPassword" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Conferma Nuova Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn--primary">Cambia Password</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Proverbs Admin Panel Modal -->
-    <div class="modal hidden" id="proverbsPanel">
-        <div class="modal-backdrop"></div>
-        <div class="modal-content modal-content--large">
-            <div class="modal-header">
-                <h3>Gestione Proverbi</h3>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="admin-tabs">
-                    <button class="admin-tab active" data-tab="add-proverb">Aggiungi Proverbio</button>
-                    <button class="admin-tab" data-tab="manage-proverb">Gestisci Proverbi</button>
-					<button class="admin-tab" data-tab="import-proverbi">Importa Dati</button>
-                    <button class="admin-tab" data-tab="export-proverbi">Esporta Dati</button>
-                </div>
-
-                <!-- Add proverb tab -->
-                <div class="admin-tab-content active" id="add-proverb-tab">
-                    <form id="addProverbForm" class="add-proverb-form">
-                        <div class="form-group">
-                            <label class="form-label">Proverbio in dialetto</label>
-                            <textarea class="form-control" id="dialectProverb" rows="2" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Traduzione italiana</label>
-                            <textarea class="form-control" id="translationProverb" rows="2" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Significato/Spiegazione</label>
-                            <textarea class="form-control" id="meaningProverb" rows="2" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Categoria</label>
-                            <select class="form-control" id="categoryProverb" required>
-                                <option value="">Seleziona categoria</option>
-                                <option value="saggezza">Saggezza</option>
-                                <option value="carattere">Carattere</option>
-                                <option value="storia">Storia</option>
-                                <option value="tempo">Tempo</option>
-                                <option value="casa">Casa</option>
-                                <option value="famiglia">Famiglia</option>
-                                <option value="lavoro">Lavoro</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn--primary">Aggiungi Proverbio</button>
-                    </form>
-                </div>
-				
-				<!-- Nuovi tab per import/export -->
-				<div class="admin-tab-content" id="import-proverbi-tab">
-					<div class="import-section">
-						<h4>Importa Proverbi</h4>
-						<p>Carica termini da file JSON o CSV</p>
-						<div class="import-controls">
-							<input type="file" id="importProverbsFile" accept=".json,.csv" class="form-control">
-							<button class="btn btn--primary" onclick="importProverbs()">📤 Importa File</button>
-						</div>
-						<div class="import-format-help">
-							<h5>Formati supportati:</h5>
-							<p><strong>JSON:</strong>  Array di oggetti con campi dialect, translation, meaning, category</p>
-							<p><strong>CSV:</strong> Colonne dialect,translation,meaning,category</p>
-						</div>
-					</div>
-				</div>
-				
-				<div class="admin-tab-content" id="export-proverbi-tab">
-					<div class="export-section">
-						<h4>Esporta Proverbi</h4>
-						<p>Scarica tutti i termini per backup o trasferimento.</p>
-						 <div class="export-buttons">
-							<button class="btn btn--primary" onclick="exportProverbs('json')">📥 Esporta JSON</button>
-							<button class="btn btn--primary" onclick="exportProverbs('csv')">📊 Esporta CSV</button>
-						</div>
-				    </div>
-                </div>
-                <!-- Manage proverbs tab -->
-                <div class="admin-tab-content" id="manage-proverb-tab">
-                    <div class="manage-controls">
-                        <input type="text" class="form-control" placeholder="Cerca proverbio..." id="manageProverbsSearch">
-                    </div>
-                    <div class="proverbs-list" id="manageProverbsList">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script src="app.js"></script>
 </body>
+
 </html>
